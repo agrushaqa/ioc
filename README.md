@@ -33,5 +33,40 @@ IoC.Resolve("двигаться прямо", obj);
     Реализованы модульные тесты. 2 балла
     Реализованы многопоточные тесты. 2 балла
     Максимальная оценка 10 баллов.
-    Задание принято, если будет набрано не менее 7 балов.
+    Задание принято, если будет набрано не менее 7 баллов.
+
+# requirements.txt
+## create
+pip freeze > requirements.txt
+## use
+pip install -r requirements.txt
+
+# code style
+## isort
+python -m pip install isort
+### run 
+isort .
+## mypy
+python -m pip install mypy
+### run 
+mypy .
+## flake8
+python -m pip install flake8
+### run
+flake8 --exclude venv,docs
+## code coverage
+pip install coverage
+### run
+coverage run C:\Users\agrusha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\behave\__main__.py
+в файле .coveragerc нужно указать исходники
+
+# Pytest - Run Tests in Parallel
+## install
+```pip install pytest-xdist```
+
+also:
+https://pypi.org/project/pytest-parallel/
+## run
+```pytest -n 2 test_common.py```
+
 
