@@ -1,13 +1,13 @@
+# -*- coding: utf-8 -*-
 import executor
 
 
 class IoC:
-    def __init__(self, list_functions={}):
-        self.methods = list_functions
-        self.add_method("IoC.register", self.register)
+    def __init__(self):
+        self.methods = {}
 
-    def add_method(self, name, method):
-        self.methods[name] = method
+    def replace_all_methods(self, dict_functions):
+        self.methods = dict_functions
 
     def resolve(self, key: str, *argv, **kwargs):
         '''
@@ -17,6 +17,3 @@ class IoC:
         :return:
         '''
         return executor.Executor(self.methods[key], *argv, **kwargs)
-
-    def register(self, registered_name, called_method):
-        self.add_method(registered_name, called_method)
