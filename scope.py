@@ -34,6 +34,11 @@ class Scopes:
         self.content[scope_id] = scope
 
     def add(self, scope: str):
+        '''
+        Для наследования scope
+        :param scope:
+        :return:
+        '''
         current_scope = self.get_current()
         self.set_current(scope.update(current_scope))
 
